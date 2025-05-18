@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 
 import algorithme.Dijkstra;
 
-class DijkstraTest {
+public class DijkstraTest {
 	// Définition de graphes pour les tests
 	private static final String GRAPH1 = "A-B(6), A-C(1), A-D(2), B-E(1), C-E(4), D-B(1), E-F(1)";
 	private static final String GRAPH_NEG = "A-B(6), A-C(1), A-D(2), B-E(-3), C-E(4), D-B(1), E-F(1)"; // Graphe avec un arc négatif
