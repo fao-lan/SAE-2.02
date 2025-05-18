@@ -1,14 +1,13 @@
 package applications;
 
-import graph.Graph;
+import graph.interfaces.IGraph;
 import maze.Maze;
 
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 
 
-public class GraphMaze<C> implements Graph<C> {
+public class GraphMaze<C> implements IGraph<C> {
     private final Maze<C> maze;
 
     public GraphMaze(Maze<C> maze) {

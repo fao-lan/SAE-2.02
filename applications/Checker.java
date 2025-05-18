@@ -4,11 +4,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
-import graph.Graph;
-import graph.ShortestPath.Distances;
+import graph.interfaces.IGraph;
+import graph.interfaces.IShortestPath.Distances;
 import maze.regular.RegularMaze;
-import applications.GraphMaze;
-import dijkstra.Dijkstra;
+import algorithme.Dijkstra;
 
 public class Checker {
     /**
@@ -83,7 +82,7 @@ public class Checker {
             System.out.println("fichier '" + distFile + "' manquant ou au mauvais format");
             return;
         }
-        Graph<Integer> graph = new GraphMaze<>(maze);
+        IGraph<Integer> graph = new GraphMaze<>(maze);
         Distances<Integer> dst = new Dijkstra<Integer>().compute(graph, maze.start());
         if (!dst.dist().equals(expectedDist.dist())|| !checkPred(maze, expectedDist, dst))
             System.out.println("echec" + " : " + mazeFile + " et " + distFile);
